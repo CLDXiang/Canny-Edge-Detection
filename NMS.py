@@ -19,7 +19,10 @@ def NMS(G, theta):
         for j in range(1, G.shape[1] - 1):
 
             tan = np.tan(theta[i, j])
-            cot = 1 / tan
+            if tan == 0:
+                cot = np.inf
+            else:
+                cot = 1 / tan
             Gp1, Gp2 = 0, 0
 
             if 0 <= angle[i, j] < 45:  # 0 ~ 45 度

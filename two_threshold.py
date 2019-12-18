@@ -7,6 +7,7 @@ def calcu_threshold(G, ratio=0.3):
     '''
     high = np.sort(G.flat)[int(G.size * (1 - ratio))]
     low = high / 2
+    print('高阈值：{} ，低阈值：{}'.format(high, low))
     return high, low
 
 
